@@ -2,7 +2,16 @@
 
 # STARTING COMMAND
 eval "$(starship init zsh)"
-pokemon-colorscripts -r
+
+# Launching pokemon script
+# pokemon-colorscripts -r
+
+# Launching tmux
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
+
+
 
 ## PLUGIN
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -18,6 +27,7 @@ alias ..="cd .."
 
 # Dotfiles repo alias
 alias config="/usr/bin/git --git-dir=dotfiles.git --work-tree=$HOME"
+alias 'git tr'='git log --graph --pretty=oneline --abbrev-commit'
 
 alias cp="cp -v"
 alias rm="rm -i"
@@ -27,15 +37,20 @@ alias rm="rm -i"
 
 # changes the editor in the terminal, to edit long commands.
 export EDITOR='nvim'
-export VISAL='nvim'
+export VISUAL='nvim'
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # PATH CONFIG
-export PATH="$HOME/.config/scripts:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/repos/volatility3:$HOME/.config/scripts:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
 
 ### "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# Launch autojump
+[[ -s /home/math/.autojump/etc/profile.d/autojump.sh ]] && source /home/math/.autojump/etc/profile.d/autojump.sh
+
+
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
