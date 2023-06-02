@@ -4,11 +4,15 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Stay centered when scrolling down or up
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- misc
+vim.keymap.set("n", "<leader>so", "<cmd>:so<CR>", { desc = "Source current file" })
 
 -------- WINDOW
 -- Move to window using the <ctrl> hjkl keys
@@ -16,6 +20,9 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+vim.keymap.set("n", "<leader>wv", "<C-w>v<C-w>l", { desc = "Split vertically and go to the right window" })
+vim.keymap.set("n", "<leader>ws", "<C-w>s<C-w>j", { desc = "Split horizontally and go to the down window" })
+vim.keymap.set("n", "<leader>wc", "<C-w>c", { desc = "Close window" })
 
 -- Resize window
 vim.keymap.set("n", "<C-r>k", "<cmd>horizontal resize -5<CR>")
@@ -41,6 +48,9 @@ vim.keymap.set("n", "<M-'>", "<cmd>tabn 4<CR>")
 -- Create and close tab
 vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Open an empty tab" })
 vim.keymap.set("n", "<leader>tc", "<cmd>tabc<CR>", { desc = "Close the current tab" })
+
+--------- FILE BROWSER
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<CR>")
 
 ----------------
 -- greatest remap ever

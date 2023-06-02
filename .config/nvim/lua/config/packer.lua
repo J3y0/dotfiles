@@ -7,6 +7,10 @@ return require('packer').startup(function(use)
     use 'rstacruz/vim-closer'
 
     -- Select your theme
+    use { "folke/tokyonight.nvim" }
+    use { "nyoom-engineering/oxocarbon.nvim" }
+    use { "nvimdev/zephyr-nvim" }
+    use { 'rmehri01/onenord.nvim' }
     use { "ellisonleao/gruvbox.nvim" }
     use { "audibleblink/hackthebox.vim" }
 
@@ -40,8 +44,29 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
+    -- Startup
+    use {
+        "startup-nvim/startup.nvim",
+        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+        config = function()
+            require"startup".setup()
+        end
+    }
+
+    -- Status line
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }    
     
+    -- File browser based on telescope
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    }
+
     -- use( 'jiangmiao/auto-pairs' )
+    use ( "terrortylor/nvim-comment" )
 
     use( 'ThePrimeagen/vim-be-good' )
 
