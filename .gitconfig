@@ -1,0 +1,10 @@
+[user]
+	email = mathieu.baudon@gmail.com
+	name = Jey0
+[alias]
+	tr = log --all --decorate --graph --oneline
+    st = status
+    c = commit
+    p = push
+    ca = commit --amend
+    co = checkout
