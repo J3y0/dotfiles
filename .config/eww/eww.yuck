@@ -1,0 +1,27 @@
+(include "bar/bar.yuck")
+(include "logout_menu/logout.yuck")
+
+(defwindow bar_window
+    :stacking "fg"
+    :monitor 0
+    :reserve (struts :distance "40px" :side "top")
+    :windowtype "dock"
+    :wm-ignore false
+    :geometry (geometry
+                :x "0"
+                :y "0"
+                :width "100%"
+                :height "40px")
+    (bar)
+)
+
+(defwindow logout_window
+    :stacking "fg"
+    :monitor 0
+    :windowtype "normal"
+    :wm-ignore true
+    :geometry (geometry
+                :width "100%"
+                :height "100%")
+    (logout)
+)

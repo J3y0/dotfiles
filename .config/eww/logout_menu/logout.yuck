@@ -1,0 +1,87 @@
+(defpoll hours_logout :interval "1m" "date '+%H'")
+(defpoll minutes_logout :interval "30s" "date '+%M'")
+
+; The logout widget
+(defwidget logout []
+    (box
+        :class "bg-logout"
+        :space-evenly false
+        :orientation "v"
+        (button
+            :halign "start"
+            :onclick "./launch_eww.sh --close-logout"
+            :class "close-button"
+            "󰅖"
+        )
+        (label
+            :class "hours-logoutmenu"
+            :text "${hours_logout}"
+        )
+        (label
+          :class "minutes-logoutmenu"
+          :text "${minutes_logout}"
+        )
+        (sundial)
+        (logout_buttons)
+    )
+)
+
+(defwidget sundial []
+    (label
+        :class "sundial-label"
+        :text {hours_logout >= 2 && hours_logout <= 4 ? "Early Morning" :
+          hours_logout <= 5 ? "Dawn" :
+          hours_logout >= 6
+            && (hours_logout <= 8 && minutes_logout <= 59)
+              ? "Morning" :
+          hours_logout >= 9
+            && (hours_logout <= 11 && minutes_logout <= 59)
+              ? "Late Morning" :
+          hours_logout == 12 && minutes_logout <= 29
+            ? "Midday" :
+          hours_logout >= 12 && hours_logout <= 16
+            ? "Afternoon" :
+          hours_logout > 16 && hours_logout <= 17
+            ? "Late Afternoon" :
+          (hours_logout >= 17 && minutes_logout <= 1)
+            || (hours_logout <= 18 && minutes_logout <= 20)
+              ? "Early Evening" :
+          hours_logout >= 18 && hours_logout <= 19
+            ? "Dusk" :
+          hours_logout > 19 && hours_logout <= 21
+            ? "Late Evening" :
+          hours_logout > 21 ? "Night" : "Midnight"}
+    )
+)
+
+(defwidget logout_buttons []
+  (box
+    :class "buttons-box"
+    :spacing 50
+    :vexpand true
+    :hexpand true
+    :valign "end"
+    :halign "center"
+    :space-evenly false
+    (button
+      :class "poweroff-button"
+      :onclick "systemctl poweroff"
+      "⏻"
+    )
+    (button
+      :class "reboot-button"
+      :onclick "systemctl reboot"
+      ""
+    )
+    (button
+      :class "logout-button"
+      :onclick "bspc quit"
+      ""
+    )
+    (button
+      :class "suspend-button"
+      :onclick "systemctl suspend"
+      "󰤄"
+    )
+  )
+)

@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
     use { 'rmehri01/onenord.nvim' }
     use { "ellisonleao/gruvbox.nvim" }
     use { "audibleblink/hackthebox.vim" }
+    use { 'rose-pine/neovim', as = 'rose-pine' }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -57,8 +59,8 @@ return require('packer').startup(function(use)
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }    
-    
+    }
+
     -- File browser based on telescope
     use {
         "nvim-telescope/telescope-file-browser.nvim",
@@ -69,5 +71,13 @@ return require('packer').startup(function(use)
     use ( "terrortylor/nvim-comment" )
 
     use( 'ThePrimeagen/vim-be-good' )
+
+    -- Nvim tree
+    use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons', -- optional
+      },
+    }
 
 end)

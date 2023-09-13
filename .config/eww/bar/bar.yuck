@@ -1,0 +1,212 @@
+; The entire bar
+(defwidget bar []
+    (box
+        :class "bar"
+        :orientation "h"
+        :vexpand "false" 
+		:hexpand "false"
+        (left)
+        (center)
+        (right)
+    )
+)
+
+; Open powermenu
+(defwidget powermenu []
+    (button
+        :class "powermenu"
+        :onclick "./launch_eww.sh --open-logout"
+        "⏻"
+    )
+)
+
+; Left widgets of the bar
+(defwidget left []
+    (box
+        :orientation "h"
+        :halign "start"
+        :space-evenly "false"
+        :spacing "0"
+        (powermenu)
+        (box
+            :class "left_bar"
+            :orientation "h"
+            :space-evenly "false"
+            (workspaces)
+        )
+    )
+)
+
+(defwidget center []
+    (box
+        :orientation "h"
+        :halign "center"
+        :space-evenly "false"
+        :spacing "0"
+        :class "center_bar"
+        (spotify)
+    )
+)
+
+; Right widgets of the bar
+(defwidget right []
+    (box
+        :class "right_bar"
+        :orientation "h"
+        :halign "end"
+        :space-evenly "false"
+        (battery)
+        (sep)
+        (volume)
+        (sep)
+        (date)
+        (sep)
+        (time)
+    )
+)
+
+; Volume Widget
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll state-vol :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $4 }'")
+(defwidget volume []
+    (box
+        :orientation "h"
+        :space-evenly "false" 
+        :spacing "10"
+        (overlay
+            (circular-progress
+                :class "volume-spinner"
+                :value current-volume
+                :start-at "75" ; in percentage
+                :clockwise true
+                :height "25"
+                :width "25"
+                :thickness "5"
+            )
+            (revealer
+                :transition "crossfade"
+                :duration "500ms"
+                :reveal "${current-volume == 0}"
+                (label
+                    :class "volume-label"
+                    :text ""
+                )
+            )
+        )
+
+        ; Volume level
+        (label
+            :class "volume-label"
+            :text { state-vol=="off" ? "Muted" : "${current-volume}%"}
+        )
+    )
+)
+
+; Time widget
+(defpoll hours :interval "1s" "date '+%H'")
+(defpoll minutes :interval "1s" "date '+%M'")
+(defwidget time []
+    (box
+        :orientation "h"
+        :space-evenly "false"
+        (label
+            :class "time_label"
+            :text "${hours}"
+        )
+        (label
+            :class "time_separator"
+            :text ""
+        )
+        (label
+            :class "time_label"
+            :text "${minutes}"
+        )
+    )
+)
+
+; A simple separator widget
+(defwidget sep []
+    (label
+        :class "separ"
+        :text "|"
+    )
+)
+
+; Date widget
+(defpoll date :interval "10h" "date '+%A %d/%m'")
+(defwidget date []
+    (box
+        :spacing "12"
+        :space-evenly "false"
+        (label
+            :class "date-label"
+            :text "󰃭"
+        )
+        (button
+            :class "date-label"
+            ; :onclick should open calendat popup
+            "${date}"
+        )
+    )
+)
+
+; Workspace widget
+(deflisten workspace "./script/workspace.sh")
+(defwidget workspaces []
+    (literal
+        :content workspace
+    )
+)
+
+; Battery widget
+(defpoll batt_icon :interval "1m" "./script/battery.sh icon")
+(defpoll batt_percentage :interval "1m" "./script/battery.sh percent")
+(defwidget battery []
+    (label
+        :class "battery-label"
+        :text "${batt_icon}  ${batt_percentage}%"
+    )
+)
+
+; Spotify widget
+(defpoll music_status :interval "1s" "./script/music.sh --status")
+(defpoll music_title :interval "1s" "./script/music.sh --song")
+(defpoll music_artist :interval "1s" "./script/music.sh --artist")
+(defwidget spotify []
+    (box
+        :space-evenly "false"
+        (box
+            :orientation "v"
+            :space-evenly "false"
+            (label
+                :class "title-song"
+                :style {music_title == "" ? "" : "padding: 0px 5px;"}
+                :halign "start"
+                :text "${music_title}"
+            )
+            (label
+                :class "artist-song"
+                :style {music_artist == "" ? "" : "padding: 0px 5px;"}
+                :halign "start"
+                :text "${music_artist}"
+            )
+        )
+        (box
+            (button
+                :class "music-buttons"
+                :onclick "./script/music.sh --prev"
+                "󰼨"
+            )
+            (button
+                :class "play-button"
+                :onclick "./script/music.sh --toggle"
+                "${music_status}"
+            )
+            (button
+                :class "music-buttons"
+                :onclick "./script/music.sh --next"
+                "󰼧"
+            )
+        )
+    )
+)

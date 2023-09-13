@@ -1,2 +1,3 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill --randomize $HOME/Documents/wallpapers/*
+# feh --no-fehbg --bg-fill --randomize $HOME/Documents/wallpapers/*
+feh --no-fehbg --bg-fill $HOME/Documents/wallpapers/0029_minimalist-abstract-woman-tree.png

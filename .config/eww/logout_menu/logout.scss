@@ -1,0 +1,112 @@
+.bg-logout {
+  background-image: url('./logout_menu/logout_bg.png')
+}
+
+.hours-logoutmenu {
+  color: #c6d0f5;
+  font-family: Iosevka;
+  font-size: 100px;
+  font-weight: 500;
+  margin-top: 100px;
+  margin-right: 100px; 
+}
+
+.minutes-logoutmenu {
+  color: #c6d0f5;
+  font-family: Iosevka;
+  font-size: 100px;
+  font-weight: 500;
+  margin-top: -50px;
+  margin-left: 100px; 
+}
+
+.sundial-label {
+  font-family: JetBrainsMono;
+  font-style: italic;
+  font-size: 25px;
+  color: #b5bfe2;
+}
+
+.close-button {
+  color: #eebebe;
+  font-family: JetBrainsMono;
+  font-weight: 700;
+  font-size: 30px;
+  padding: 5px 15px;
+  margin: 10px 0px 0px 10px;
+}
+
+.close-button:hover {
+  color: #e78284;
+}
+
+.buttons-box {
+  margin-bottom: 230px;
+}
+
+.poweroff-button {
+  background-color: #222631;
+  border-radius: 10px;
+  font-family: JetBrainsMono;
+  color: #e78284;
+  font-weight: 700;
+  font-size: 48px;
+  min-height: 80px;
+  min-width: 120px;
+}
+
+.poweroff-button:hover {
+  background-color: #292c3c;
+  color: #ea999c;
+}
+
+.reboot-button {
+  background-color: #222631;
+  border-radius: 10px;
+  font-family: JetBrainsMono;
+  color: #e5c890;
+  font-weight: 700;
+  font-size: 48px;
+  min-height: 80px;
+  min-width: 120px;
+  padding-right: 15px;
+}
+
+.reboot-button:hover {
+  background-color: #292c3c;
+  color: #f2d5cf;
+}
+
+.logout-button {
+  background-color: #222631;
+  border-radius: 10px;
+  font-family: JetBrainsMono;
+  font-weight: 700;
+  color: #99d1db;
+  font-size: 48px;
+  min-height: 80px;
+  min-width: 120px;
+  padding-right: 10px;
+}
+
+.logout-button:hover {
+  background-color: #292c3c;
+  color: #85c1dc;
+}
+
+.suspend-button {
+  background-color: #222631;
+  border-radius: 10px;
+  font-family: JetBrainsMono;
+  font-weight: 700;
+  color: #ca9ee6;
+  font-size: 48px;
+  min-height: 80px;
+  min-width: 120px;
+  padding-right: 5px;
+}
+
+.suspend-button:hover {
+  background-color: #292c3c;
+  color: #babbf1;
+}

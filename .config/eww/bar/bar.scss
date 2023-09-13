@@ -1,0 +1,153 @@
+.bar {
+    background-color: #232634;
+}
+
+.left_bar {
+    background-color: #303446;
+    border: 1px solid #51576d;
+    border-radius: 5px;
+    font-family: JetBrainsMono;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 4px 0px;
+    padding: 0px 10px;
+}
+
+.center_bar {
+    background-color: #303446;
+    border-radius: 5px;
+    border: 1px solid #51576d;
+    font-family: JetBrainsMono;
+    padding: 0px 10px;
+    margin: 4px 0px;
+}
+
+.right_bar {
+    background-color: #303446;
+    border-radius: 5px;
+    border: 1px solid #51576d;
+    font-family: JetBrainsMono;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 4px 20px;
+    padding: 0px 10px;
+}
+
+// POWERMENU WIDGET
+.powermenu {
+    color: #e78284;
+    font-family: JetBrainsMono;
+    font-weight: 700;
+    font-size: 1.6em;
+    padding: 0px 20px;
+}
+
+.separ {
+    color: #51576d;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0px 8px 0px 8px;
+}
+
+// BATTERY WIDGET
+.battery-label {
+    color: #e5c890;
+}
+
+// VOLUME WIDGET
+.volume-label {
+    color: #a6d189;
+}
+
+.volume-spinner {
+    color: #a6d189;
+}
+
+// TIME WIDGET
+.time_label {
+    color: #81c8be;
+}
+
+.time_separator {
+    color: #81c8be;
+    font-family: "Material Icons";
+    font-weight: 100;
+    font-size: 1.2em;
+    padding: 0px 3px;
+    padding-top: 1px;
+}
+
+// DATE WIDGET
+.date-label {
+    color: #ca9ee6;
+}
+
+// WORKSPACE WIDGET
+.workspace {
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 4px;
+}
+
+.w0,
+.w01,
+.w02,
+.w03,
+.w04,
+.w05,
+.w06,
+.w011,
+.w022,
+.w033,
+.w044,
+.w055,
+.w066 {
+    margin: 0px 4px;
+}
+
+/* Unoccupied */
+.w0 {
+    color: #414559;
+}
+
+/* Occupied */
+.w01,
+.w02,
+.w03,
+.w04,
+.w05,
+.w06 {
+    color: #f2d5cf;
+}
+
+/* Focused */
+.w011,
+.w022,
+.w033,
+.w044,
+.w055,
+.w066 {
+    color: #ef9f76;
+}
+
+// SPOTIFY WIDGET
+.title-song {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.artist-song {
+    font-size: 10px;
+}
+
+.music-buttons {
+    color: #8caaee;
+    font-size: 20px;
+    margin-top: 1px;
+}
+
+.play-button {
+    color: #ca9ee6;
+    margin: 0px 13px 0px 5px;
+    font-size: 24px;
+}
