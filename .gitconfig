@@ -1,0 +1,12 @@
+[user]
+	email = 91211461+J3y0@users.noreply.github.com
+	name = J3y0
+[alias]
+	tr = log --all --decorate --graph --oneline
+    st = status
+    c = commit
+    p = push
+	pff = pull --ff
+    ca = commit --amend
+    co = checkout
+	fpa = fetch --prune --all
