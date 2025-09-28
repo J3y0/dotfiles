@@ -1,0 +1,15 @@
+
+* {
+    bg-col:  #131314;
+    bg-col-light: #18181a;
+    blue: #92A2D5;
+    green: #90B99F;
+    yellow: #E6B99D;
+    purple: #ACA1CF;
+    magenta: #E29ECA;
+    orange: #F5A191;
+    red: #EA83A5;
+    fg-col: #C9C7CD;
+    grey: #3B3B3E;
+    width: 600;
+}

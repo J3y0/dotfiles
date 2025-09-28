@@ -1,0 +1,38 @@
+# Use custom format
+format = '\[$directory\] $git_branch$git_status$rust$python$character'
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+[character]
+success_symbol = "[&](green)"
+error_symbol = "[&](red)"
+
+[directory]
+format = " [$path]($style)[$read_only](bold #F0FF42)($read_only_style) "
+truncation_length = 3
+home_symbol = "~"
+read_only = " "
+
+[git_branch]
+style = "bold #7C83FD"
+
+[git_metrics]
+disabled = false
+
+[git_status]
+ahead = " ⇡ ${count}"
+diverged = "⇕ ⇡ ${ahead_count} ⇣ ${behind_count}"
+behind = "⇣ ${count}"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "#ff00dd"
+
+[python]
+format = '(in \($virtualenv\) )'
+
+[rust]
+format = 'via [$symbol($version)]($style) '
+version_format = 'v${raw}'
+symbol = '🦀 '
+style = 'bold red'
+detect_files = ['Cargo.toml']
