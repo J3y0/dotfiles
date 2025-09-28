@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=BinaryNinja
+GenericName=Reverse Engineering platform
+Exec=/home/math/binaryninja/binaryninja
+Terminal=false
+Type=Application
+Icon=binaryninja
+MimeType=application/x-binaryninja;x-scheme-handler/binaryninja;
+Categories=Utility;
+StartupWMClass=binaryninja
