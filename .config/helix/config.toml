@@ -1,0 +1,61 @@
+theme = "rose_pine"
+
+[editor]
+line-number = "relative"
+color-modes = true
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "╎"
+skip-levels = 0
+
+[editor.statusline]
+left = [
+  "mode",
+  "spacer",
+  "version-control",
+  "spacer",
+  "separator",
+  "file-name",
+  "file-modification-indicator"
+]
+right = [
+  "spinner",
+  "spacer",
+  "workspace-diagnostics",
+  "separator",
+  "spacer",
+  "diagnostics",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type"
+]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.normal.g]
+q = ":bc"
+Q = ":bc!"
+
+[keys.insert]
+C-c = "normal_mode"
+"C-space" = "completion"
+
+[keys.normal]
+C-k = "jump_view_up"
+C-j = "jump_view_down"
+C-h = "jump_view_left"
+C-l = "jump_view_right"
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+[keys.select]
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
