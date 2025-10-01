@@ -12,7 +12,6 @@ alias ll="exa --icons -gal --group-directories-first"
 alias ls="exa --icons -g --group-directories-first"
 alias tree="exa --icons -g --tree --group-directories-first"
 alias ..="cd .."
-alias jm=". cd_fzf"
 
 # Dotfiles repo alias
 alias config="/usr/bin/git --git-dir=dotfiles.git --work-tree=$HOME"
@@ -44,5 +43,3 @@ HISTSIZE=10000
 SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
 alias dot='/usr/bin/git --git-dir=/home/math/.cfg/ --work-tree=/home/math'
-
-. "$HOME/.local/share/../bin/env"
