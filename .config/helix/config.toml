@@ -5,13 +5,12 @@ line-number = "relative"
 color-modes = true
 cursorline = true
 
-[editor.cursor-shape]
-insert = "bar"
+[editor.soft-wrap]
+enable = true
 
-[editor.indent-guides]
-render = true
-character = "╎" # Some characters that work well: "▏", "┆", "┊", "╎"
-skip-levels = 0
+[editor.file-picker]
+hidden = false
+git-ignore = false
 
 [editor.statusline]
 left = [
@@ -31,31 +30,50 @@ right = [
   "spacer",
   "diagnostics",
   "position",
+  "primary-selection-length",
   "file-encoding",
   "file-line-ending",
   "file-type"
 ]
-separator = "|"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+separator = "│"
 
-[keys.normal.g]
-q = ":bc"
-Q = ":bc!"
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = true
+character = "┊" # Some characters that work well: "▏", "┆", "┊", "╎"
+skip-levels = 0
+
+[editor.lsp]
+display-messages = true
 
 [keys.insert]
 C-c = "normal_mode"
 "C-space" = "completion"
 
 [keys.normal]
-C-k = "jump_view_up"
+# Move around split windows
 C-j = "jump_view_down"
+C-k = "jump_view_up"
 C-h = "jump_view_left"
 C-l = "jump_view_right"
+
+# Move lines up and down
 A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
+# split line
+C-J = ["insert_mode", "insert_newline", "normal_mode"]
+
+[keys.normal.g]
+q = ":bc"
+Q = ":bc!"
+
 [keys.select]
+# Move lines up and down
 A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
