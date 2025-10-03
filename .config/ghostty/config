@@ -29,26 +29,27 @@ window-padding-y = 5
 
 gtk-custom-css = "tab-style.css"
 
-keybind = ctrl+shift+w=close_surface
-keybind = ctrl+shift+m=toggle_split_zoom
+# Unbind
 keybind = ctrl+shift+e=unbind
-keybind = ctrl+shift+h=new_split:down
-keybind = ctrl+shift+o=new_split:right
 keybind = ctrl+shift+n=unbind
-keybind = ctrl+shift+n=next_tab
-keybind = ctrl+shift+p=previous_tab
-
+keybind = ctrl+shift+j=unbind
 keybind = super+ctrl+left_bracket=unbind
 keybind = super+ctrl+right_bracket=unbind
-
 keybind = super+ctrl+shift+plus=unbind
 keybind = super+ctrl+shift+up=unbind
 keybind = super+ctrl+shift+down=unbind
 keybind = super+ctrl+shift+left=unbind
 keybind = super+ctrl+shift+right=unbind
-
 keybind = ctrl+enter=unbind
 keybind = alt+f4=unbind
+
+
+keybind = ctrl+shift+w=close_surface
+keybind = ctrl+shift+m=toggle_split_zoom
+keybind = ctrl+shift+h=new_split:down
+keybind = ctrl+shift+o=new_split:right
+keybind = ctrl+shift+n=next_tab
+keybind = ctrl+shift+p=previous_tab
 
 keybind = ctrl+shift+left_bracket=goto_split:previous
 keybind = ctrl+shift+right_bracket=goto_split:next
