@@ -35,6 +35,10 @@ export PATH="$PATH:$HOME/zig/zig-x86_64/"
 export MANROFFOPT='-c'
 export MANPAGER="sh -c 'col -bx | bat -plman'"
 
+# Move by words
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 eval "$(zoxide init zsh)"
 
 # Lines configured by zsh-newuser-install
