@@ -60,7 +60,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse
+    // focus-follows-mouse
 }
 
 // You can configure outputs by their name, which you can find
@@ -97,7 +97,7 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    position x=1280 y=0
+    position x=0 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -270,11 +270,9 @@ prefer-no-csd
 // The path is formatted with strftime(3) to give you the screenshot date and time.
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-// environment {
-//     DISPLAY ":1"
-//     QT_QPA_PLATFORM "wayland"
-//     ELECTRON_OZONE_PLATFORM_HINT "auto"
-// }
+environment {
+    _JAVA_AWT_WM_NONREPARENTING "1"
+}
 
 // Animation settings.
 // The wiki explains how to configure individual animations:
@@ -497,4 +495,33 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
+}
+
+recent-windows {
+    debounce-ms 400
+    open-delay-ms 100
+
+    highlight {
+        active-color "#f2d5cfff"
+        urgent-color "#e78284ff"
+        padding 25
+        corner-radius 5
+    }
+
+    previews {
+        max-height 500
+        max-scale 0.5
+    }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+grave       { next-window     filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        Mod+grave       { next-window     filter="app-id"; }
+        Mod+Shift+grave { previous-window filter="app-id"; }
+    }
 }
