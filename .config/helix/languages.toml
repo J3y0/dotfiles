@@ -1,0 +1,5 @@
+[[language]]
+name = "go"
+roots = ["go.work", "go.mod"]
+auto-format = true
+formatter = ["gofumpt"]
